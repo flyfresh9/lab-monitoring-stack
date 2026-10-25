@@ -5,9 +5,19 @@ Este laboratorio implementa una pila de monitoreo completa utilizando la arquite
 ---
 
 ## 📐 Arquitectura del Sistema
-   cAdvisor (Puerto 8081) > Prometheus (Puerto 9090)                     
-   Consulta / PromQL > Grafana (Puerto 3000)
-                                              
+```text
+  ┌─────────────────┐       Scrape (5s)      ┌─────────────────┐
+  │    cAdvisor     │ ─────────────────────> │   Prometheus    │
+  │  (Puerto 8081)  │                        │  (Puerto 9090)  │
+  └─────────────────┘                        └────────┬────────┘
+                                                      │
+                                                      │ Consulta / PromQL
+                                                      │
+                                                 ┌────────▼────────┐
+                                                 │     Grafana     │
+                                                 │  (Puerto 3000)  │
+                                                 └─────────────────┘
+
 Tecnologías Utilizadas :
 
 Docker & Docker Compose: Orquestación de la pila de observabilidad.
