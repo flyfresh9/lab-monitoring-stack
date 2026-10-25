@@ -5,14 +5,8 @@ Este laboratorio implementa una pila de monitoreo completa utilizando la arquite
 ---
 
 ## 📐 Arquitectura del Sistema
-
-             Scrape 5 segundos
-   cAdvisor  >>>>>>>>>>>>>>>> Prometheus
- (Puerto 8081)              (Puerto 9090)                    
-           Consulta / PromQL
-                  > 
-               Grafana
-            (Puerto 3000)
+   cAdvisor (Puerto 8081) > Prometheus (Puerto 9090)                     
+   Consulta / PromQL > Grafana (Puerto 3000)
                                               
 Tecnologías Utilizadas :
 
